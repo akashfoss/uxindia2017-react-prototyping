@@ -1,14 +1,58 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { MoodColorSheet } from './examples/mood-color';
+import { MoodColorBar } from './examples/mood-color';
+import { ColorBar } from './examples/color-bar';
+import { ProgressBar } from './examples/progress-bar';
 
 class App extends Component {
     render() {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path={'/'} component={MoodColorSheet} />
+                    <Route path={'/'}
+                           exact={true}
+                           render={
+                               () => (
+                                   <div style={{ width: '100vw', height: '100vh' }}>
+                                       <MoodColorBar />
+                                   </div>
+                               )
+                           } />
+                    <Route path={'/color'}
+                           exact={true}
+                           render={
+                               () => (
+                                   <div style={{ width: '100vw', height: '100vh' }}>
+                                       <ColorBar />
+                                   </div>
+                               )
+                           } />
+                    <Route path={'/mood'}
+                           exact={true}
+                           render={
+                               () => (
+                                   <div style={{ width: '100vw', height: '100vh' }}>
+                                       <MoodColorBar />
+                                   </div>
+                               )
+                           } />
+                    <Route path={'/progress'}
+                           exact={true}
+                           render={
+                               () => (
+                                   <div style={{
+                                       height: '100vh',
+                                       display: 'flex',
+                                       flexDirection: 'column',
+                                       alignItems: 'center',
+                                       justifyContent: 'center'
+                                   }}>
+                                       <div style={{ width: '80vw', height: '30px' }}>
+                                           <ProgressBar />
+                                       </div>
+                                   </div>                               )
+                           } />
                 </Switch>
             </BrowserRouter>
         );
