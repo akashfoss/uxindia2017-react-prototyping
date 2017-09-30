@@ -7,7 +7,7 @@ export class MoodColorBar extends Component {
         minAngle: 0,
         maxAngle: 360,
         factor: 5,
-        frequency: 1000
+        frequency: 500
     };
 
     state = {
@@ -30,12 +30,14 @@ export class MoodColorBar extends Component {
 
     changeMood = () => {
         const { factor, minAngle, maxAngle } = this.props;
+        const min = Math.min(minAngle, maxAngle);
+        const max = Math.max(minAngle, maxAngle);
 
         const nextAngle = Math.min(
-            maxAngle,
+            max,
             Math.max(
-                minAngle,
-                (this.state.angle + factor) % maxAngle
+                min,
+                (this.state.angle + factor) % max
             )
         );
 
