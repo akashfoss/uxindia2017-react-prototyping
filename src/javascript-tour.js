@@ -44,6 +44,7 @@ while (morning) {
 }
 
 // ------- Functions --------
+
 function makePizza() {
 
     notifyDone('Pizza Ready!');
@@ -55,4 +56,37 @@ function notifyDone(msg) {
 
 const onOkButtonClick = () => {
     console.log('Ok great!');
+};
+
+
+// ------- Classes --------
+
+class ColorBar extends React.Component {
+    static defaultProps = {
+        color: 'red'
+    };
+
+    state = {
+        currentValue: 'blue'
+    };
+
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+
+    }
+
+    componentDidMount() {
+
+    }
+}
+
+
+// ------- Modules --------
+
+export default constants = {
+    apiURL: 'http://localhost:3000',
+    token: '1fafsr23fasdf'
 };
