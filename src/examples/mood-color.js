@@ -7,7 +7,7 @@ export class MoodColorBar extends Component {
         minAngle: 0,
         maxAngle: 360,
         factor: 5,
-        frequency: 500
+        frequency: 250
     };
 
     state = {
