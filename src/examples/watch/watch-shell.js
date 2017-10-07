@@ -1,0 +1,78 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const c = {
+    rim: 20,
+    or: 60,
+    ir: 50,
+    width: 312,
+    height: 390
+};
+
+
+export class WatchShell extends React.Component {
+
+    static propTypes = {
+        rimColor: PropTypes.string,
+        faceColor: PropTypes.string,
+        strapColor: PropTypes.string,
+    };
+
+    static defaultProps = {
+        rimColor: '#555',
+        faceColor: 'white',
+        strapColor: '#777'
+    };
+
+    render() {
+        const { children, rimColor, faceColor, strapColor } = this.props;
+
+        return (
+            <svg width={c.width + 30} height={c.height + 200}>
+                <rect fill={strapColor}
+                      x={c.width * 0.15}
+                      y={0}
+                      width={c.width * 0.7}
+                      height={c.height + 200} />
+
+                <g transform={`translate(0, ${100})`}>
+                    <rect fill={rimColor} width={c.width} height={c.height} rx={c.or} ry={c.or} />
+                    <rect fill={faceColor} width={c.width - c.rim} height={c.height - c.rim}
+                          x={c.rim / 2} y={c.rim / 2}
+                          rx={c.ir} ry={c.ir} />
+
+                    <g transform={`translate(${c.width - 4}, ${100})`}>
+                        <rect fill={'#ccc'}
+                              width={20}
+                              height={60}
+                              rx={4} ry={20} />
+
+                        {
+                            [0, 1, 2, 3, 4].map(x => {
+                                return (
+                                    <rect fill={'#555'}
+                                          key={x}
+                                          width={5}
+                                          height={2}
+                                          x={13} y={10 + 10 * x}
+                                          rx={0} ry={0} />
+                                );
+                            })
+                        }
+
+                        <rect fill={'#ccc'}
+                              width={10}
+                              height={90}
+                              x={0} y={110}
+                              rx={4} ry={16} />
+
+                    </g>
+
+                    {children ? children(c) : null}
+                </g>
+            </svg>
+
+        );
+    }
+}
+

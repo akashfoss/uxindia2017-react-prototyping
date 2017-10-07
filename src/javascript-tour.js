@@ -46,12 +46,34 @@ while (morning) {
 // ------- Functions --------
 
 function makePizza() {
+    const config = {
+        flavor: 'Hearty Veggies',
+        base: 'Deep Dish',
+        size: 12,
+        sauce: 'normal',
+        wellDone: true
+    };
+
+    applyConfig(config);
 
     notifyDone('Pizza Ready!');
 }
 
+function applyConfig(config) {
+    // Use the config and prepare the pizza
+}
+
 function notifyDone(msg) {
     console.log(msg);
+}
+
+//---
+function make5Rectangles() {
+    return [0, 1, 2, 3, 4], map(y => {
+        return (
+            <Rect x={0} y={100 + y * 10} />
+        );
+    })
 }
 
 const onOkButtonClick = () => {
@@ -86,7 +108,15 @@ class ColorBar extends React.Component {
 
 // ------- Modules --------
 
+// constants.js
 export default constants = {
     apiURL: 'http://localhost:3000',
     token: '1fafsr23fasdf'
 };
+
+export function log() { }
+
+// service.js
+import constants, { log } from './constants';
+
+log(constants)
