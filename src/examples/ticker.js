@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 
-export class Time extends React.Component {
+export class Ticker extends React.Component {
     state = {
         time: moment()
     };

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3-shape": "^1.2.0",
     "moment": "^2.18.1",
     "prop-types": "latest",
     "react": "^16.0.0",

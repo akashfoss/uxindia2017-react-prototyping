@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Time } from '../time';
+import { Ticker } from './ticker';
 
 export function TimeNow() {
     return (
@@ -12,7 +12,7 @@ export function TimeNow() {
 
 export function TickingTime() {
     return (
-        <Time>
+        <Ticker>
             {
                 (time) => (
                     <div style={{ fontSize: '15vw' }}>
@@ -20,6 +20,6 @@ export function TickingTime() {
                     </div>
                 )
             }
-        </Time>
+        </Ticker>
     );
 }

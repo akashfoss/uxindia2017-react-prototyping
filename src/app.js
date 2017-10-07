@@ -4,6 +4,8 @@ import { TickingTime, TimeNow } from './examples/simple-time';
 import { WatchFace1 } from './examples/watch/face-1';
 import { WatchShell } from './examples/watch/watch-shell';
 import { WatchFace2 } from './examples/watch/face-2';
+import { WatchFace3 } from './examples/watch/face-3';
+import uxIndiaLogo from './uxindia.png';
 
 class App extends Component {
     render() {
@@ -13,17 +15,12 @@ class App extends Component {
             { path: '/watch-shell', component: WatchShell, label: 'Watch Shell' },
             { path: '/watch-face-1', component: WatchFace1, label: 'Watch Face 1' },
             { path: '/watch-face-2', component: WatchFace2, label: 'Watch Face 2' },
+            { path: '/watch-face-3', component: WatchFace3, label: 'Watch Face 3' },
         ];
 
         return (
             <BrowserRouter>
-                <div style={{
-                    display: 'flex',
-                    width: '100vw',
-                    height: '100vh',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
+                <AppShell>
                     <Switch>
                         <Route path={'/'}
                                exact={true}
@@ -51,10 +48,45 @@ class App extends Component {
                             })
                         }
                     </Switch>
-                </div>
+                </AppShell>
             </BrowserRouter>
         );
     }
 }
 
 export default App;
+
+
+function AppShell({ children }) {
+    return (
+        <div style={{
+            display: 'flex',
+            width: '100vw',
+            height: '100vh',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative'
+        }}>
+            <div style={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: '#999',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: 12,
+                padding: 5
+            }}>
+                <img src={uxIndiaLogo}
+                     alt="UXINDIA 2017"
+                     height={30} />
+                <span>Let's Code to Prototype</span>
+                <a href="https://twitter.com/pavanpodila" style={{marginLeft: 10}}>Pavan Podila</a>
+            </div>
+            {children}
+        </div>
+    );
+}
