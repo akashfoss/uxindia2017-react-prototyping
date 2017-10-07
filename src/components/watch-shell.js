@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Ticker } from '../ticker';
+import { Ticker } from './ticker';
 
 const c = {
     rim: 20,

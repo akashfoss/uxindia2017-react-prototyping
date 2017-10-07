@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Ticker } from './ticker';
+import { Ticker } from '../components/ticker';
 
 export function TimeNow() {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { WatchShell } from './watch-shell';
+import { WatchShell } from '../components/watch-shell';
 import * as d3 from 'd3-shape';
 import { Motion, spring } from 'react-motion';
 

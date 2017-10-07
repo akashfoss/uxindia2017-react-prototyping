@@ -1,5 +1,5 @@
 import React from 'react';
-import { WatchShell } from './watch-shell';
+import { WatchShell } from '../components/watch-shell';
 
 export function WatchFace1() {
 
