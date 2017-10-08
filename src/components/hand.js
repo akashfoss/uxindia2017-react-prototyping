@@ -53,3 +53,52 @@ function SimpleHand({ rect, color }) {
     );
 
 }
+
+export function RoundedHand({ rect, color }) {
+    const tipLength = 10;
+
+    return (
+        <g>
+            <rect x={rect.x + rect.width / 2}
+                  y={rect.y}
+                  width={2} height={tipLength}
+                  fill={color} />
+
+            <rect x={rect.x} y={rect.y + tipLength}
+                  width={rect.width} height={rect.height - tipLength / 2}
+                  rx={rect.width / 2} ry={rect.width / 2}
+                  fill={'none'}
+                  stroke={color} strokeWidth={2} />
+        </g>
+    );
+
+}
+
+export function RoundedHandWithCircularEnd({ rect, fill = 'none', stroke = 'none' }) {
+    const tipLength = 10;
+
+    return (
+        <g>
+            <rect x={rect.x}
+                  y={rect.y}
+                  width={rect.width} height={rect.height - 1.5 * tipLength}
+                  rx={rect.width / 2} ry={rect.width / 2}
+                  fill={fill}
+                  stroke={stroke}
+                  strokeWidth={stroke === 'none' ? 0 : 2} />
+
+            <rect x={rect.x + rect.width / 2 - 1}
+                  y={rect.y + rect.height - 1.5 * tipLength}
+                  width={2} height={tipLength}
+                  fill={fill} />
+
+            <circle cx={rect.x + rect.width / 2}
+                    cy={rect.y + rect.height}
+                    r={tipLength / 2}
+                    stroke={fill} strokeWidth={2}
+                    fill={'none'} />
+
+        </g>
+    );
+
+}
