@@ -45,7 +45,7 @@ export function WatchFace3() {
                                 <tspan textAnchor={'start'}
                                        fill={'#CCC'}
                                        fontSize={30}>
-                                    {time.format('a')}
+                                    {time.format('A')}
                                 </tspan>
 
                             </text>

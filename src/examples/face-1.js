@@ -4,7 +4,7 @@ import { WatchShell } from '../components/watch-shell';
 export function WatchFace1() {
 
     return (
-        <WatchShell>
+        <WatchShell strapColor={'brown'}>
             {
                 ({ config, time }) => {
                     return [
@@ -34,7 +34,7 @@ export function WatchFace1() {
                               fill={'#999'}
                               fontSize={30}
                               key={'a'}>
-                            {time.format('a')}
+                            {time.format('A')}
                         </text>
 
                     ];

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Ticker } from './ticker';
+import { TimeTeller } from './time-teller';
 
 const c = {
     rim: 20,
@@ -29,7 +29,7 @@ export class WatchShell extends React.PureComponent {
         const { children, rimColor, faceColor, strapColor } = this.props;
 
         return (
-            <Ticker>
+            <TimeTeller>
                 {
                     (time) => (
                         <svg width={c.width + 60} height={c.height + 200}>
@@ -103,7 +103,7 @@ export class WatchShell extends React.PureComponent {
                         </svg>
                     )
                 }
-            </Ticker>
+            </TimeTeller>
 
         );
     }

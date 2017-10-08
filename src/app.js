@@ -7,6 +7,7 @@ import { WatchFace2 } from './examples/face-2';
 import { WatchFace3 } from './examples/face-3';
 import { AppShell } from './components/app-shell';
 import { AnalogFace1 } from './examples/face-4';
+import { AnalogFace2 } from './examples/face-5';
 
 class App extends Component {
     render() {
@@ -14,10 +15,11 @@ class App extends Component {
             { path: '/time-1', component: TimeNow, label: 'Simple Time' },
             { path: '/time-1.1', component: TickingTime, label: 'Ticking... Simple Time' },
             { path: '/watch-shell', component: WatchShell, label: 'Watch Shell' },
-            { path: '/watch-face-1', component: WatchFace1, label: 'Watch Face 1' },
-            { path: '/watch-face-2', component: WatchFace2, label: 'Watch Face 2' },
-            { path: '/watch-face-3', component: WatchFace3, label: 'Watch Face 3' },
-            { path: '/watch-face-4', component: AnalogFace1, label: 'Analog Face 1' },
+            { path: '/digital-face-1', component: WatchFace1, label: 'Watch Face 1' },
+            { path: '/digital-face-2', component: WatchFace2, label: 'Watch Face 2' },
+            { path: '/digital-face-3', component: WatchFace3, label: 'Watch Face 3' },
+            { path: '/analog-face-1', component: AnalogFace1, label: 'Analog Face 1' },
+            { path: '/analog-face-2', component: AnalogFace2, label: 'Analog Face 2' },
         ];
 
         return (
