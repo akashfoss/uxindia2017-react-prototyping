@@ -22,7 +22,7 @@ export class TimeTeller extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        if (newProps.wind != this.props.wind) {
+        if (newProps.wind !== this.props.wind) {
             this.setTimer(newProps.wind);
         }
     }

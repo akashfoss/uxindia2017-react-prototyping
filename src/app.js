@@ -15,9 +15,9 @@ class App extends Component {
             { path: '/time-1', component: TimeNow, label: 'Simple Time' },
             { path: '/time-1.1', component: TickingTime, label: 'Ticking... Simple Time' },
             { path: '/watch-shell', component: WatchShell, label: 'Watch Shell' },
-            { path: '/digital-face-1', component: WatchFace1, label: 'Watch Face 1' },
-            { path: '/digital-face-2', component: WatchFace2, label: 'Watch Face 2' },
-            { path: '/digital-face-3', component: WatchFace3, label: 'Watch Face 3' },
+            { path: '/digital-face-1', component: WatchFace1, label: 'Digital Face 1' },
+            { path: '/digital-face-2', component: WatchFace2, label: 'Digital Face 2' },
+            { path: '/digital-face-3', component: WatchFace3, label: 'Digital Face 3' },
             { path: '/analog-face-1', component: AnalogFace1, label: 'Analog Face 1' },
             { path: '/analog-face-2', component: AnalogFace2, label: 'Analog Face 2' },
         ];
@@ -31,11 +31,19 @@ class App extends Component {
                                render={
                                    () => {
                                        return (
-                                           <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                           <div style={{
+                                               display: 'flex', flexDirection: 'row',
+                                               alignItems: 'center', justifyContent: 'center',
+                                               flexWrap: 'wrap',
+                                               overflow: 'auto'
+                                           }}>
                                                {
                                                    examples.map(ex => {
                                                        return (
-                                                           <Link to={ex.path} key={ex.path}>{ex.label}</Link>
+
+                                                           <Link to={ex.path} key={ex.path} className="example-tile">
+                                                               {ex.label}
+                                                           </Link>
                                                        );
                                                    })
                                                }

@@ -17,6 +17,7 @@ export class WatchShell extends React.PureComponent {
         rimColor: PropTypes.string,
         faceColor: PropTypes.string,
         strapColor: PropTypes.string,
+        buttonColor: PropTypes.string,
         wind: PropTypes.bool
     };
 
@@ -24,88 +25,87 @@ export class WatchShell extends React.PureComponent {
         rimColor: '#555',
         faceColor: 'white',
         strapColor: '#777',
+        buttonColor: '#CCC',
         wind: false
     };
 
     render() {
-        const { children, rimColor, faceColor, strapColor, wind } = this.props;
+        const { children, rimColor, faceColor, strapColor, buttonColor, wind } = this.props;
 
         return (
-            <TimeTeller wind={wind}>
-                {
-                    (time) => (
-                        <svg width={c.width + 60} height={c.height + 200}>
-                            <defs>
-                                <clipPath id="clip">
-                                    <rect x={0}
-                                          y={0}
-                                          width={c.width}
-                                          height={c.height}
-                                          rx={c.ir} ry={c.ir} />
-                                </clipPath>
+            <svg width={c.width + 60} height={c.height + 200}>
+                <defs>
+                    <clipPath id="clip">
+                        <rect x={0}
+                              y={0}
+                              width={c.width}
+                              height={c.height}
+                              rx={c.ir} ry={c.ir} />
+                    </clipPath>
 
-                                <linearGradient x1={'0%'} y1={'0%'} x2={'0%'} y2={'100%'} id="strap-gradient">
-                                    <stop offset={'0%'} stopColor={'#000'} stopOpacity={0} />
-                                    <stop offset={'100%'} stopColor={'#000'} stopOpacity={0.35} />
-                                </linearGradient>
+                    <linearGradient x1={'0%'} y1={'0%'} x2={'0%'} y2={'100%'} id="strap-gradient">
+                        <stop offset={'0%'} stopColor={'#000'} stopOpacity={0} />
+                        <stop offset={'100%'} stopColor={'#000'} stopOpacity={0.35} />
+                    </linearGradient>
 
-                            </defs>
+                </defs>
 
-                            <g transform={'translate(30,0)'}>
-                                <rect fill={strapColor}
-                                      x={c.width * 0.15}
-                                      y={0}
-                                      width={c.width * 0.7}
-                                      height={c.height + 200} />
+                <g transform={'translate(30,0)'}>
+                    <rect fill={strapColor}
+                          x={c.width * 0.15}
+                          y={0}
+                          width={c.width * 0.7}
+                          height={c.height + 200} />
 
-                                <rect fill={'url(#strap-gradient)'}
-                                      x={c.width * 0.15}
-                                      y={0}
-                                      width={c.width * 0.7}
-                                      height={c.height + 200} />
+                    <rect fill={'url(#strap-gradient)'}
+                          x={c.width * 0.15}
+                          y={0}
+                          width={c.width * 0.7}
+                          height={c.height + 200} />
 
-                                <g transform={`translate(0, ${100})`}>
-                                    <rect fill={rimColor} width={c.width} height={c.height} rx={c.or} ry={c.or} />
-                                    <rect fill={faceColor} width={c.width - c.rim} height={c.height - c.rim}
-                                          x={c.rim / 2} y={c.rim / 2}
-                                          rx={c.ir} ry={c.ir} />
+                    <g transform={`translate(0, ${100})`}>
+                        <rect fill={rimColor} width={c.width} height={c.height} rx={c.or} ry={c.or} />
+                        <rect fill={faceColor} width={c.width - c.rim} height={c.height - c.rim}
+                              x={c.rim / 2} y={c.rim / 2}
+                              rx={c.ir} ry={c.ir} />
 
-                                    <g transform={`translate(${c.width - 4}, ${100})`}>
-                                        <rect fill={'#ccc'}
-                                              width={20}
-                                              height={60}
-                                              rx={4} ry={20} />
+                        <g transform={`translate(${c.width - 4}, ${100})`}>
+                            <rect fill={buttonColor}
+                                  width={20}
+                                  height={60}
+                                  rx={4} ry={20} />
 
-                                        {
-                                            [0, 1, 2, 3, 4].map(x => {
-                                                return (
-                                                    <rect fill={'#555'}
-                                                          key={x}
-                                                          width={5}
-                                                          height={2}
-                                                          x={13} y={10 + 10 * x}
-                                                          rx={0} ry={0} />
-                                                );
-                                            })
-                                        }
+                            {
+                                [0, 1, 2, 3, 4].map(x => {
+                                    return (
+                                        <rect fill={'#555'}
+                                              key={x}
+                                              width={5}
+                                              height={2}
+                                              x={13} y={10 + 10 * x}
+                                              rx={0} ry={0} />
+                                    );
+                                })
+                            }
 
-                                        <rect fill={'#ccc'}
-                                              width={10}
-                                              height={90}
-                                              x={0} y={110}
-                                              rx={4} ry={16} />
+                            <rect fill={buttonColor}
+                                  width={10}
+                                  height={90}
+                                  x={0} y={110}
+                                  rx={4} ry={16} />
 
-                                    </g>
+                        </g>
 
-                                    <g clipPath={'url(#clip)'}>
-                                        {children ? children({ config: c, time }) : null}
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
-                    )
-                }
-            </TimeTeller>
+                        <g clipPath={'url(#clip)'}>
+                            <TimeTeller wind={wind}>
+                                {
+                                    (time) => children ? children({ config: c, time }) : null
+                                }
+                            </TimeTeller>
+                        </g>
+                    </g>
+                </g>
+            </svg>
 
         );
     }
