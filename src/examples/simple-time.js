@@ -12,14 +12,12 @@ export function TimeNow() {
 
 export function TickingTime() {
     return (
-        <TimeTeller>
-            {
-                (time) => (
-                    <div style={{ fontSize: '15vw' }}>
-                        {time.format('hh:mm:ss')}
-                    </div>
-                )
-            }
-        </TimeTeller>
+        <div style={{ fontSize: '15vw' }}>
+            <TimeTeller>
+                {
+                    (time) => time.format('hh:mm:ss')
+                }
+            </TimeTeller>
+        </div>
     );
 }
