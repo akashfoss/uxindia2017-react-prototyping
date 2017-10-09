@@ -22,7 +22,7 @@ export function WatchFace1() {
                               alignmentBaseline={'middle'}
                               textAnchor={'start'}
                               fill={'#999'}
-                              fontSize={40}
+                              fontSize={34}
                               key={'ss'}>
                             {time.format('ss')}
                         </text>,

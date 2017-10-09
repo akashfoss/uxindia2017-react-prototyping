@@ -17,19 +17,21 @@ export class WatchShell extends React.PureComponent {
         rimColor: PropTypes.string,
         faceColor: PropTypes.string,
         strapColor: PropTypes.string,
+        wind: PropTypes.bool
     };
 
     static defaultProps = {
         rimColor: '#555',
         faceColor: 'white',
-        strapColor: '#777'
+        strapColor: '#777',
+        wind: false
     };
 
     render() {
-        const { children, rimColor, faceColor, strapColor } = this.props;
+        const { children, rimColor, faceColor, strapColor, wind } = this.props;
 
         return (
-            <TimeTeller>
+            <TimeTeller wind={wind}>
                 {
                     (time) => (
                         <svg width={c.width + 60} height={c.height + 200}>
