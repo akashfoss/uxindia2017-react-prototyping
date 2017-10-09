@@ -16,7 +16,9 @@ export class TimeTeller extends React.Component {
     }
 
     tick() {
-        const time = this.props.wind ? this.state.time.add(1, 'minutes') : moment();
+        const time = this.props.wind
+            ? this.state.time.add(1, 'minutes').add(1, 'seconds')
+            : moment();
 
         this.setState({ time });
     }

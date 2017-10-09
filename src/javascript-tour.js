@@ -69,7 +69,7 @@ function notifyDone(msg) {
 
 //---
 function make5Rectangles() {
-    return [0, 1, 2, 3, 4], map(y => {
+    return [0, 1, 2, 3, 4].map(y => {
         return (
             <Rect x={0} y={100 + y * 10} />
         );

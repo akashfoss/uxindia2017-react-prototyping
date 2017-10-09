@@ -1,6 +1,6 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import { Hand, RoundedHandWithCircularEnd } from '../components/hand';
+import { Hand, RoundedHand, RoundedHandWithCircularEnd } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
 
@@ -107,8 +107,8 @@ export function AnalogFace2() {
                                         <Hand length={75} thickness={10}
                                               angle={(hours / 12) * 360 + (minutes / 60) * 30}>
                                             {
-                                                ({ rect }) => <RoundedHandWithCircularEnd rect={rect}
-                                                                                          fill={strapColor} />
+                                                ({ rect }) => <RoundedHand rect={rect}
+                                                                           color={strapColor} />
                                             }
                                         </Hand>
 
