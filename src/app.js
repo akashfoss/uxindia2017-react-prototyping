@@ -8,6 +8,7 @@ import { WatchFace3 } from './examples/digital-face-3';
 import { AppShell } from './components/app-shell';
 import { AnalogFace1 } from './examples/analog-face-1';
 import { AnalogFace2 } from './examples/analog-face-2';
+import { WatchFace4 } from './examples/digital-face-4';
 
 class App extends Component {
     render() {
@@ -18,6 +19,7 @@ class App extends Component {
             { path: '/digital-face-1', component: WatchFace1, label: 'Digital Face 1' },
             { path: '/digital-face-2', component: WatchFace2, label: 'Digital Face 2' },
             { path: '/digital-face-3', component: WatchFace3, label: 'Digital Face 3' },
+            { path: '/digital-face-4', component: WatchFace4, label: 'Digital Face 4' },
             { path: '/analog-face-1', component: AnalogFace1, label: 'Analog Face 1' },
             { path: '/analog-face-2', component: AnalogFace2, label: 'Analog Face 2' },
         ];
