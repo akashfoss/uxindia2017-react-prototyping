@@ -1,5 +1,6 @@
 import React from 'react';
 import uxIndiaLogo from '../uxindia.png';
+import { Link } from 'react-router-dom';
 
 export function AppShell({ children }) {
     return (
@@ -27,9 +28,26 @@ export function AppShell({ children }) {
                 <img src={uxIndiaLogo}
                      alt="UXINDIA 2017"
                      height={30} />
-                <span>Let's Code to Prototype</span>
                 <a href="https://twitter.com/pavanpodila" style={{ marginLeft: 10 }}>Pavan Podila</a>
             </div>
+            <Link to={'/'} style={{
+                textDecoration: 'none',
+                color: 'white',
+            }}>
+                <span style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    background: '#999',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 5,
+                }}>
+                    Let's Code to Prototype
+                </span>
+            </Link>
             {children}
         </div>
     );
