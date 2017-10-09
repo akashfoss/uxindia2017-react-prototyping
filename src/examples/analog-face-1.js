@@ -1,6 +1,6 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import { Hand } from '../components/hand';
+import { HourHand, MinuteHand, SecondHand } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
 
@@ -9,11 +9,6 @@ export function AnalogFace1() {
         <WatchShell>
             {
                 ({ config, time }) => {
-                    let hr = time.hours();
-                    const hours = hr >= 12 ? hr - 12 : hr;
-                    const minutes = time.minutes();
-                    const seconds = time.seconds();
-
                     const radius = Math.min(config.width / 2, config.height / 2) - config.rim;
 
                     return (
@@ -30,17 +25,17 @@ export function AnalogFace1() {
                                 <RadialTickLabels radius={radius - 1.25 * config.rim}
                                                   angleInterval={30} />
 
-                                <Hand length={70} thickness={16}
-                                      angle={(hours / 12) * 360 + (minutes / 60) * 30}
-                                      color={'black'} />
+                                <HourHand length={70} thickness={16}
+                                          time={time}
+                                          color={'black'} />
 
-                                <Hand length={90} thickness={6}
-                                      angle={(minutes / 60) * 360}
-                                      color={'#777'} />
+                                <MinuteHand length={90} thickness={6}
+                                            time={time}
+                                            color={'#777'} />
 
-                                <Hand length={100} thickness={1}
-                                      angle={(seconds / 60) * 360}
-                                      color={'#ccc'} />
+                                <SecondHand length={100} thickness={1}
+                                            time={time}
+                                            color={'#ccc'} />
                             </g>
 
                         </g>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * The zero position of hand is vertically upright at the 12 O'Clock mark
  */
-export class Hand extends React.Component {
+class Hand extends React.Component {
 
     static propTypes = {
         length: PropTypes.number,
@@ -28,6 +28,55 @@ export class Hand extends React.Component {
             <g transform={`rotate(${angle})`}>
                 {children({ rect, color })}
             </g>
+        );
+    }
+}
+
+export class HourHand extends React.Component {
+    static propTypes = {
+        time: PropTypes.object,
+        ...Hand.propTypes,
+    };
+
+    render() {
+        const { time } = this.props;
+        const hours = time.hour() >= 12 ? time.hour() - 12 : time.hour();
+        const angle = (hours / 12) * 360 + (time.minute() / 60) * 30;
+
+        return (
+            <Hand {...this.props} angle={angle} />
+        );
+    }
+}
+
+export class MinuteHand extends Hand {
+    static propTypes = {
+        time: PropTypes.object,
+        ...Hand.propTypes,
+    };
+
+    render() {
+        const { time } = this.props;
+        const angle = (time.minute() / 60) * 360;
+
+        return (
+            <Hand {...this.props} angle={angle} />
+        );
+    }
+}
+
+export class SecondHand extends Hand {
+    static propTypes = {
+        time: PropTypes.object,
+        ...Hand.propTypes,
+    };
+
+    render() {
+        const { time } = this.props;
+        const angle = (time.second() / 60) * 360;
+
+        return (
+            <Hand {...this.props} angle={angle} />
         );
     }
 }
@@ -74,7 +123,7 @@ export function RoundedHand({ rect, color }) {
 
 }
 
-export function RoundedHandWithCircularEnd({ rect, fill = 'none', stroke = 'none' }) {
+export function RoundedHandWithCircularEnd({ rect, color = 'red' }) {
     const tipLength = 10;
 
     return (
@@ -83,19 +132,17 @@ export function RoundedHandWithCircularEnd({ rect, fill = 'none', stroke = 'none
                   y={rect.y}
                   width={rect.width} height={rect.height - 1.5 * tipLength}
                   rx={rect.width / 2} ry={rect.width / 2}
-                  fill={fill}
-                  stroke={stroke}
-                  strokeWidth={stroke === 'none' ? 0 : 2} />
+                  fill={color} />
 
             <rect x={rect.x + rect.width / 2 - 1}
                   y={rect.y + rect.height - 1.5 * tipLength}
                   width={2} height={tipLength}
-                  fill={fill} />
+                  fill={color} />
 
             <circle cx={rect.x + rect.width / 2}
                     cy={rect.y + rect.height}
                     r={tipLength / 2}
-                    stroke={fill} strokeWidth={2}
+                    stroke={color} strokeWidth={2}
                     fill={'none'} />
 
         </g>

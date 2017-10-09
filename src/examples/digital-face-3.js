@@ -1,7 +1,6 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import * as d3 from 'd3-shape';
-import { Motion, spring } from 'react-motion';
+import { SecondProgressRing } from '../components/second-progress-ring';
 
 const strapColor = '#637295';
 
@@ -15,25 +14,15 @@ export function WatchFace3() {
                         x: config.width / 2,
                         y: config.height / 2
                     };
-                    const radius = center.x;
-
-                    const arc = d3.arc()
-                        .innerRadius(radius - 100)
-                        .outerRadius(radius - 20)
-                        .startAngle(0);
+                    const radius = config.width / 2;
 
                     return (
                         <g>
-                            <Motion defaultStyle={{ seconds: 0 }}
-                                    style={{ seconds: spring(time.seconds()) }}>
-                                {
-                                    (style) => (
-                                        <path d={arc({ endAngle: (style.seconds / 59) * 2 * Math.PI })}
-                                              fill={strapColor}
-                                              transform={`translate(${center.x}, ${center.y})`} />
-                                    )
-                                }
-                            </Motion>
+                            <g transform={`translate(${center.x}, ${center.y})`}>
+                                <SecondProgressRing radius={radius - config.rim} thickness={config.or}
+                                                    color={strapColor}
+                                                    seconds={time.second()} />
+                            </g>
 
                             <text x={config.width / 2}
                                   y={config.height / 2}
@@ -66,3 +55,4 @@ export function WatchFace3() {
         </WatchShell>
     );
 }
+

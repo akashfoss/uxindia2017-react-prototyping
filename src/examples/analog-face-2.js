@@ -1,8 +1,9 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import { Hand, RoundedHand, RoundedHandWithCircularEnd } from '../components/hand';
+import { HourHand, MinuteHand, RoundedHandWithCircularEnd } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
+import { SecondProgressRing } from '../components/second-progress-ring';
 
 export function AnalogFace2() {
     const strapColor = '#ff3987';
@@ -69,10 +70,6 @@ export function AnalogFace2() {
 
                                     {/* Inner ring of Hours */}
                                     <g>
-                                        <circle cx={0} cy={0} r={radius - 3.25 * config.rim}
-                                                strokeWidth={1} stroke={'#444'}
-                                                fill={'none'} />
-
                                         <RadialTickMarks radius={radius - 3.25 * config.rim + 5}
                                                          angleInterval={30}
                                                          length={5} thickness={2}
@@ -104,30 +101,28 @@ export function AnalogFace2() {
 
                                     {/* Hands */}
                                     <g>
-                                        <Hand length={75} thickness={10}
-                                              angle={(hours / 12) * 360 + (minutes / 60) * 30}>
-                                            {
-                                                ({ rect }) => <RoundedHand rect={rect}
-                                                                           color={strapColor} />
-                                            }
-                                        </Hand>
+                                        <SecondProgressRing radius={radius - 3.25 * config.rim} thickness={2}
+                                                            color={'lightyellow'}
+                                                            seconds={time.second()} />
 
-                                        <Hand length={100} thickness={6}
-                                              angle={(minutes / 60) * 360}>
+
+                                        <HourHand length={75} thickness={10}
+                                                  time={time}
+                                                  angle={(hours / 12) * 360 + (minutes / 60) * 30}>
                                             {
                                                 ({ rect }) => <RoundedHandWithCircularEnd rect={rect}
-                                                                                          fill={strapColor} />
+                                                                                          color={strapColor} />
                                             }
-                                        </Hand>
+                                        </HourHand>
 
-                                        <Hand length={radius - config.rim} thickness={1}
-                                              angle={(seconds / 60) * 360}>
+                                        <MinuteHand length={100} thickness={6}
+                                                    time={time}
+                                                    angle={(minutes / 60) * 360}>
                                             {
-                                                ({ rect }) => <rect {...rect}
-                                                                    width={1}
-                                                                    fill={'#CCC'} />
+                                                ({ rect }) => <RoundedHandWithCircularEnd rect={rect}
+                                                                                          color={strapColor} />
                                             }
-                                        </Hand>
+                                        </MinuteHand>
                                     </g>
                                 </g>
 
