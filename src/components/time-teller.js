@@ -8,11 +8,12 @@ export class TimeTeller extends React.Component {
     };
 
     static propTypes = {
-        wind: PropTypes.bool
+        wind: PropTypes.bool,
+        pause: PropTypes.bool,
     };
 
     componentWillMount() {
-        this.setTimer(this.props.wind);
+        this.setTimer(this.props);
     }
 
     tick() {
@@ -24,14 +25,22 @@ export class TimeTeller extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        if (newProps.wind !== this.props.wind) {
-            this.setTimer(newProps.wind);
+        if (newProps.pause !== this.props.pause) {
+            this.setTimer(newProps);
+        } else if (newProps.wind !== this.props.wind) {
+            this.setTimer(newProps);
         }
     }
 
-    setTimer(wind) {
+    setTimer(props) {
+        const { wind, pause } = props;
+
         if (this.intervalId) {
             clearInterval(this.intervalId);
+        }
+
+        if (pause) {
+            return;
         }
 
         this.intervalId = setInterval(() => this.tick(), wind ? 25 : 100);

@@ -22,7 +22,6 @@ export function AnalogFace2() {
                         let hr = time.hours();
                         const hours = hr >= 12 ? hr - 12 : hr;
                         const minutes = time.minutes();
-                        const seconds = time.seconds();
 
                         const radius = Math.min(config.width / 2, config.height / 2) - config.rim;
 
@@ -111,7 +110,8 @@ export function AnalogFace2() {
                                                   angle={(hours / 12) * 360 + (minutes / 60) * 30}>
                                             {
                                                 ({ rect }) => <RoundedHandWithCircularEnd rect={rect}
-                                                                                          color={strapColor} />
+                                                                                          strokeColor={strapColor}
+                                                                                          color={'lightyellow'} />
                                             }
                                         </HourHand>
 

@@ -123,8 +123,9 @@ export function RoundedHand({ rect, color }) {
 
 }
 
-export function RoundedHandWithCircularEnd({ rect, color = 'red' }) {
+export function RoundedHandWithCircularEnd({ rect, color = 'red', strokeColor: edgeColor }) {
     const tipLength = 10;
+    edgeColor = edgeColor || color;
 
     return (
         <g>
@@ -132,17 +133,18 @@ export function RoundedHandWithCircularEnd({ rect, color = 'red' }) {
                   y={rect.y}
                   width={rect.width} height={rect.height - 1.5 * tipLength}
                   rx={rect.width / 2} ry={rect.width / 2}
+                  stroke={edgeColor} strokeWidth={2}
                   fill={color} />
 
             <rect x={rect.x + rect.width / 2 - 1}
                   y={rect.y + rect.height - 1.5 * tipLength}
                   width={2} height={tipLength}
-                  fill={color} />
+                  fill={edgeColor} />
 
             <circle cx={rect.x + rect.width / 2}
                     cy={rect.y + rect.height}
                     r={tipLength / 2}
-                    stroke={color} strokeWidth={2}
+                    stroke={edgeColor} strokeWidth={2}
                     fill={'none'} />
 
         </g>

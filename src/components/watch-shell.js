@@ -18,7 +18,8 @@ export class WatchShell extends React.PureComponent {
         faceColor: PropTypes.string,
         strapColor: PropTypes.string,
         buttonColor: PropTypes.string,
-        wind: PropTypes.bool
+        wind: PropTypes.bool,
+        pause: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -26,11 +27,12 @@ export class WatchShell extends React.PureComponent {
         faceColor: 'white',
         strapColor: '#777',
         buttonColor: '#CCC',
-        wind: false
+        wind: false,
+        pause: false,
     };
 
     render() {
-        const { children, rimColor, faceColor, strapColor, buttonColor, wind } = this.props;
+        const { children, rimColor, faceColor, strapColor, buttonColor, wind, pause } = this.props;
 
         return (
             <svg width={c.width + 60} height={c.height + 200}>
@@ -97,7 +99,7 @@ export class WatchShell extends React.PureComponent {
                         </g>
 
                         <g clipPath={'url(#clip)'}>
-                            <TimeTeller wind={wind}>
+                            <TimeTeller wind={wind} pause={pause}>
                                 {
                                     (time) => children ? children({ config: c, time }) : null
                                 }
