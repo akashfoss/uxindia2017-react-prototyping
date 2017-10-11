@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TimeTeller } from './time-teller';
 
-const c = {
+export const watchConfig = {
     rim: 20,
     or: 60,
     ir: 50,
@@ -33,9 +33,10 @@ export class WatchShell extends React.PureComponent {
 
     render() {
         const { children, rimColor, faceColor, strapColor, buttonColor, wind, pause } = this.props;
+        const c = watchConfig;
 
         return (
-            <svg width={c.width + 60} height={c.height + 200}>
+            <svg width={c.width + 60} height={c.height + 200} style={this.props.style}>
                 <defs>
                     <clipPath id="clip">
                         <rect x={0}
