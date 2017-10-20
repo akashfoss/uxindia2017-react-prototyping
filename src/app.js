@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { TickingTime, TimeNow } from './examples/simple-time';
-import { WatchFace1 } from './examples/digital-face-1';
+import { AppShell } from './components/app-shell';
+import { TimeNow } from './examples/simple-time';
+import { TickingTime } from './examples/ticking-time';
 import { WatchShell } from './components/watch-shell';
+import { WatchFace1 } from './examples/digital-face-1';
 import { WatchFace2 } from './examples/digital-face-2';
 import { WatchFace3 } from './examples/digital-face-3';
-import { AppShell } from './components/app-shell';
+import { WatchFace4 } from './examples/digital-face-4';
 import { AnalogFace1 } from './examples/analog-face-1';
 import { AnalogFace2 } from './examples/analog-face-2';
-import { WatchFace4 } from './examples/digital-face-4';
 
 class App extends Component {
     render() {
