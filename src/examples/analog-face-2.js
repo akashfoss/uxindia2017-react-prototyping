@@ -3,7 +3,7 @@ import { WatchShell } from '../components/watch-shell';
 import { HourHand, MinuteHand, RoundedHandWithCircularEnd } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
-import { ProgressRing } from '../components/second-progress-ring';
+import { ProgressRing } from '../components/progress-ring';
 
 export function AnalogFace2() {
     const strapColor = '#ff3987';

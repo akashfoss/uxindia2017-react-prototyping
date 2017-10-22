@@ -1,6 +1,6 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import { ProgressRing } from '../components/second-progress-ring';
+import { ProgressRing } from '../components/progress-ring';
 
 const strapColor = '#637295';
 
