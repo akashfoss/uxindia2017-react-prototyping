@@ -15,7 +15,7 @@ class App extends Component {
     render() {
         const examples = [
             { path: '/time-1', component: TimeNow, label: 'Simple Time' },
-            { path: '/time-1.1', component: TickingTime, label: 'Ticking... Simple Time' },
+            { path: '/time-2', component: TickingTime, label: 'Ticking... Simple Time' },
             { path: '/watch-shell', component: WatchShell, label: 'Watch Shell' },
             { path: '/digital-face-1', component: WatchFace1, label: 'Digital Face 1' },
             { path: '/digital-face-2', component: WatchFace2, label: 'Digital Face 2' },
