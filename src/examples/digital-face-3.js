@@ -1,6 +1,6 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
-import { SecondProgressRing } from '../components/second-progress-ring';
+import { ProgressRing } from '../components/second-progress-ring';
 
 const strapColor = '#637295';
 
@@ -19,9 +19,10 @@ export function WatchFace3() {
                     return (
                         <g>
                             <g transform={`translate(${center.x}, ${center.y})`}>
-                                <SecondProgressRing radius={radius - config.rim} thickness={config.or}
-                                                    color={strapColor}
-                                                    seconds={time.second()} />
+                                <ProgressRing radius={radius - config.rim} thickness={config.or}
+                                              color={strapColor}
+                                              value={time.second()}
+                                              unit="seconds" />
                             </g>
 
                             <text x={config.width / 2}

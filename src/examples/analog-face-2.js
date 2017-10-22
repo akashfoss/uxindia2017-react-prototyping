@@ -3,7 +3,7 @@ import { WatchShell } from '../components/watch-shell';
 import { HourHand, MinuteHand, RoundedHandWithCircularEnd } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
-import { SecondProgressRing } from '../components/second-progress-ring';
+import { ProgressRing } from '../components/second-progress-ring';
 
 export function AnalogFace2() {
     const strapColor = '#ff3987';
@@ -100,9 +100,10 @@ export function AnalogFace2() {
 
                                     {/* Hands */}
                                     <g>
-                                        <SecondProgressRing radius={radius - 3.25 * config.rim} thickness={2}
-                                                            color={'lightyellow'}
-                                                            seconds={time.second()} />
+                                        <ProgressRing radius={radius - 3.25 * config.rim} thickness={2}
+                                                      color={'lightyellow'}
+                                                      value={time.second()}
+                                                      unit="seconds" />
 
 
                                         <HourHand length={75} thickness={10}
