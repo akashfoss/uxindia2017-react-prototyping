@@ -43,7 +43,7 @@ export class TimeTeller extends React.Component {
             return;
         }
 
-        this.intervalId = setInterval(() => this.tick(), wind ? 25 : 100);
+        this.intervalId = setInterval(() => this.tick(), wind ? 25 : 1000);
     }
 
     componentWillUnmount() {

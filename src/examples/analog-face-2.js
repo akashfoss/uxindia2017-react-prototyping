@@ -4,6 +4,21 @@ import { HourHand, MinuteHand, RoundedHandWithCircularEnd } from '../components/
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
 import { ProgressRing } from '../components/progress-ring';
+import { Howl } from 'howler';
+import tickSound from '../assets/tick-one.m4a';
+
+window.tick = new Howl({
+    src: [tickSound],
+});
+
+class TickSound extends React.Component {
+
+    render() {
+        window.tick.play();
+
+        return null;
+    }
+}
 
 export function AnalogFace2() {
     const strapColor = '#ff3987';
@@ -27,6 +42,7 @@ export function AnalogFace2() {
 
                         return (
                             <g>
+                                <TickSound />
                                 <g transform={`translate(${config.width / 2}, ${config.height / 2})`}>
                                     {/* Outer ring */}
                                     <g>
