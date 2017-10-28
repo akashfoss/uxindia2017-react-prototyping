@@ -7,14 +7,14 @@ import { ProgressRing } from '../components/progress-ring';
 import { Howl } from 'howler';
 import tickSound from '../assets/tick-one.m4a';
 
-window.tick = new Howl({
+const tick = new Howl({
     src: [tickSound],
 });
 
 class TickSound extends React.Component {
 
     render() {
-        window.tick.play();
+        tick.play();
 
         return null;
     }
