@@ -1,5 +1,5 @@
 import React from 'react';
-import uxIndiaLogo from '../uxindia.png';
+import uxIndiaLogo from '../assets/uxindia.png';
 import { Link } from 'react-router-dom';
 
 export function AppShell({ children }) {
