@@ -18,14 +18,6 @@ export function WatchFace1() {
                                   strokeWidth={3}>
                                 {time.format('hh')}
                             </text>
-                            <text x={config.width / 2}
-                                  y={config.height / 2}
-                                  textAnchor={'middle'}
-                                  alignmentBaseline={'hanging'}
-                                  fill={'#999'}
-                                  fontSize={175}>
-                                {time.format(':mm')}
-                            </text>
                         </g>
                     );
                 }

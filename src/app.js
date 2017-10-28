@@ -4,7 +4,7 @@ import { AppShell } from './components/app-shell';
 import { WatchShell } from './components/watch-shell';
 // Examples //
 // Exercises //
-import { TimeNow as ExTimeNow, TimeNow } from './examples/simple-time';
+import { TimeNow as ExTimeNow } from './examples/simple-time';
 import { TickingTime as ExTickingTime } from './examples/ticking-time';
 import { WatchFace1 as ExWatchFace1 } from './examples/digital-face-1';
 import { WatchFace2 as ExWatchFace2 } from './examples/digital-face-2';
@@ -12,6 +12,7 @@ import { WatchFace3 as ExWatchFace3 } from './examples/digital-face-3';
 import { WatchFace4 as ExWatchFace4 } from './examples/digital-face-4';
 import { AnalogFace1 as ExAnalogFace1 } from './examples/analog-face-1';
 import { AnalogFace2 as ExAnalogFace2 } from './examples/analog-face-2';
+import { TimeNow } from './exercises/simple-time';
 import { TickingTime } from './exercises/ticking-time';
 import { WatchFace1 } from './exercises/digital-face-1';
 import { WatchFace2 } from './exercises/digital-face-2';

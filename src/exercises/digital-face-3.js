@@ -21,8 +21,8 @@ export function WatchFace3() {
                             <g transform={`translate(${center.x}, ${center.y})`}>
                                 <ProgressRing radius={radius - config.rim} thickness={config.or}
                                               color={strapColor}
-                                              value={time.second()}
-                                              unit="seconds" />
+                                              value={time.minutes()}
+                                              unit="minutes" />
                             </g>
 
                             <text x={config.width / 2}
@@ -38,15 +38,6 @@ export function WatchFace3() {
                                     {time.format('A')}
                                 </tspan>
 
-                            </text>
-
-                            <text x={config.width / 2}
-                                  y={config.height - 30}
-                                  alignmentBaseline={'middle'}
-                                  textAnchor={'middle'}
-                                  fill={'#CCC'}
-                                  fontSize={24}>
-                                {time.format('dddd, MMM DD')}
                             </text>
 
                         </g>

@@ -20,15 +20,6 @@ export function WatchFace2() {
                                 </tspan>
                             </text>
 
-                            <text x={config.width - config.or}
-                                  y={config.height * 0.4}
-                                  alignmentBaseline={'middle'}
-                                  textAnchor={'start'}
-                                  fill={'#999'}
-                                  fontSize={20}>
-                                {time.format('ss')}
-                            </text>
-
                             <text x={config.width / 2}
                                   y={50}
                                   alignmentBaseline={'middle'}
@@ -37,21 +28,6 @@ export function WatchFace2() {
                                 {time.format('ddd')}
                             </text>
 
-                            <text x={config.width / 2}
-                                  y={80}
-                                  alignmentBaseline={'middle'}
-                                  textAnchor={'middle'}
-                                  fontSize={22}>
-                                {time.format('MMM DD')}
-                            </text>
-
-                            <text x={config.width / 2}
-                                  y={350}
-                                  alignmentBaseline={'middle'}
-                                  textAnchor={'middle'}
-                                  fontSize={22}>
-                                Let's Code to Prototype
-                            </text>
                         </g>
                     );
                 }

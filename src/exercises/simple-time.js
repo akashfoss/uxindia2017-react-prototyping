@@ -1,10 +1,9 @@
 import React from 'react';
-import moment from 'moment';
 
 export function TimeNow() {
     return (
         <div style={{ fontSize: '15vw' }}>
-            {moment().format('hh:mm:ss')}
+            12:34:56
         </div>
     );
 }
