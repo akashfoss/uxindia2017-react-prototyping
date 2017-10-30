@@ -2,7 +2,7 @@ import React from 'react';
 import uxIndiaLogo from '../assets/uxindia.png';
 import { Link } from 'react-router-dom';
 
-let Header = function () {
+let Footer = function () {
     return <div style={{
         background: '#999',
         display: 'flex',
@@ -19,7 +19,7 @@ let Header = function () {
     </div>;
 };
 
-let Footer = function () {
+let Header = function () {
     return <Link to={'/'}
                  style={{
                      textDecoration: 'none',
@@ -47,6 +47,7 @@ export function AppShell({ children }) {
             <div style={{
                 flex: 1,
                 overflow: 'auto',
+                display: 'flex'
             }}>
                 {children}
             </div>

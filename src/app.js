@@ -56,7 +56,18 @@ class App extends Component {
                         {
                             [].concat(routes.examples, routes.exercises).map(ex => {
                                 return (
-                                    <Route path={ex.path} component={ex.component} key={ex.path} />
+                                    <Route path={ex.path}
+                                           key={ex.path}
+                                           render={() => (
+                                               <div style={{
+                                                   flex: 1,
+                                                   display: 'flex',
+                                                   alignItems: 'center',
+                                                   justifyContent: 'center'
+                                               }}>
+                                                   <ex.component />
+                                               </div>
+                                           )} />
                                 );
                             })
                         }
@@ -80,21 +91,20 @@ function Dashboard() {
             {
                 routes.exercises.map(ex => {
                     return (
-                        <div style={{ position: 'relative' }}>
+                        <div style={{ position: 'relative' }}
+                             key={ex.path}>
                             <Link to={ex.path}
-                                  key={ex.path}
                                   className="example-tile">
                                 {ex.label}
                             </Link>
                             <Link to={`/examples${ex.path}`}
-                                  key={`/examples${ex.path}`}
                                   style={{
                                       position: 'absolute',
                                       right: 25,
                                       top: 20,
                                       textDecoration: 'none'
                                   }}>
-                                🏁
+                                <span role="img" aria-label="Finish Line Checkered flag">🏁</span>
                             </Link>
                         </div>
                     );

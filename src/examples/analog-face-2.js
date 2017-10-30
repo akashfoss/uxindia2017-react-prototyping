@@ -137,7 +137,8 @@ export function AnalogFace2() {
                                                     angle={(minutes / 60) * 360}>
                                             {
                                                 ({ rect }) => <RoundedHandWithCircularEnd rect={rect}
-                                                                                          color={strapColor} />
+                                                                                          strokeColor={strapColor}
+                                                                                          color={'lightyellow'} />
                                             }
                                         </MinuteHand>
                                     </g>

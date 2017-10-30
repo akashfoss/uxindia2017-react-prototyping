@@ -122,6 +122,16 @@ export function RoundedHand({ rect, color }) {
     );
 
 }
+RoundedHand.propTypes = {
+    rect: PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        width: PropTypes.number,
+        height: PropTypes.number,
+    }),
+    color: PropTypes.string,
+};
+
 
 export function RoundedHandWithCircularEnd({ rect, color = 'red', strokeColor: edgeColor }) {
     const tipLength = 10;
@@ -149,5 +159,15 @@ export function RoundedHandWithCircularEnd({ rect, color = 'red', strokeColor: e
 
         </g>
     );
-
 }
+
+RoundedHandWithCircularEnd.propTypes = {
+    rect: PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        width: PropTypes.number,
+        height: PropTypes.number,
+    }),
+    color: PropTypes.string,
+    strokeColor: PropTypes.string,
+};
