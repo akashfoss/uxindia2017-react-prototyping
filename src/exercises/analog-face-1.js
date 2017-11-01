@@ -3,6 +3,13 @@ import { WatchShell } from '../components/watch-shell';
 import { SecondHand } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 
+/*
+TODO
+
+- Add Hour and Minute hands
+- Add labels for the hours
+
+*/
 export function AnalogFace1() {
     return (
         <WatchShell>

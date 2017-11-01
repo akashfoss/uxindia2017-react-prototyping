@@ -1,6 +1,14 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
 
+/*
+TODO
+
+- Add Seconds
+- Add labels the Date and Month, below the Day of week
+
+*/
+
 export function WatchFace2() {
 
     return (

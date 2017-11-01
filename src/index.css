@@ -8,6 +8,7 @@ body, html {
 }
 
 .example-tile {
+    font-size: 1.25rem;
     width: 200px;
     height: 200px;
     display: flex;

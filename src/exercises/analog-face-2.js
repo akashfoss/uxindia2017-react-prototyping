@@ -4,6 +4,17 @@ import { MinuteHand, RoundedHandWithCircularEnd } from '../components/hand';
 import { RadialTickMarks } from '../components/radial-tick-marks';
 import { RadialTickLabels } from '../components/radial-tick-labels';
 
+/*
+TODO
+
+- Add Hour hand
+- Add a progressing Seconds ring
+- Add labels for Hours
+- Add a ring of tick marks for Hours
+- Add label for the Day of the week
+
+*/
+
 export function AnalogFace2() {
     const strapColor = '#ff3987';
 

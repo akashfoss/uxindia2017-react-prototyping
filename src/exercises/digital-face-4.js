@@ -2,6 +2,14 @@ import React from 'react';
 import { WatchShell } from '../components/watch-shell';
 import { Motion, spring } from 'react-motion';
 
+/*
+TODO
+
+- Explore adding more labels: Date, Day of week, Month, etc.
+- Observe the construction of the <Blink /> component
+
+*/
+
 export function WatchFace4() {
 
     return (

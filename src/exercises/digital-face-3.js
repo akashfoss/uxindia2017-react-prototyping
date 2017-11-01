@@ -2,6 +2,14 @@ import React from 'react';
 import { WatchShell } from '../components/watch-shell';
 import { ProgressRing } from '../components/progress-ring';
 
+/*
+TODO
+
+- Add a progressing Seconds ring
+- Add label for Day of week, Month and date
+
+*/
+
 const strapColor = '#637295';
 
 export function WatchFace3() {

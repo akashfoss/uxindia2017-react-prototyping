@@ -1,6 +1,13 @@
 import React from 'react';
 import { WatchShell } from '../components/watch-shell';
 
+/*
+TODO
+
+- Add the Minute label
+
+*/
+
 export function WatchFace1() {
 
     return (

@@ -91,27 +91,30 @@ function Dashboard() {
         }}>
             {
                 routes.exercises.map(ex => {
-                    return (
-                        <div style={{ position: 'relative' }}
-                             key={ex.path}>
-                            <Link to={ex.path}
-                                  className="example-tile">
-                                {ex.label}
-                            </Link>
-                            <Link to={`${solutionsPrefix}${ex.path}`}
-                                  style={{
-                                      position: 'absolute',
-                                      right: 25,
-                                      top: 20,
-                                      textDecoration: 'none'
-                                  }}>
-                                <span role="img" aria-label="Finish Line Checkered flag">🏁</span>
-                            </Link>
-                        </div>
-                    );
+                    return (<ExampleCard ex={ex} />);
                 })
             }
         </div>
     );
 
+}
+
+function ExampleCard({ ex }) {
+    return (
+        <div style={{ position: 'relative' }}
+             key={ex.path}>
+            <Link to={ex.path} className="example-tile">
+                {ex.label}
+            </Link>
+            <Link to={`${solutionsPrefix}${ex.path}`}
+                  style={{
+                      position: 'absolute',
+                      right: 25,
+                      top: 20,
+                      textDecoration: 'none'
+                  }}>
+                <span role="img" aria-label="Finish Line Checkered flag" style={{ fontSize: '2rem' }}>🏁</span>
+            </Link>
+        </div>
+    );
 }
