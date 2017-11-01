@@ -21,3 +21,11 @@
 - Building a set of Watch Faces!
 
 ![Watch Faces](_img/examples.png)
+
+## What are we using?
+
+- [JavaScript](https://css-tricks.com/lets-learn-es2015/), the lingua franca of the Web
+- [React](https://reactjs.org/) as our UI Development framework
+- [Moment.js](https://momentjs.com/) for displaying formatted time
+- [SVG](https://css-tricks.com/lodge/svg/) for all the vector graphics
+- [Howler.js](https://howlerjs.com/) for the tick sound in **Analog Face 2**
