@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 let Footer = function () {
     return <div style={{
-        background: '#999',
+        background: '#ff3987',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,7 +24,7 @@ let Header = function () {
                  style={{
                      textDecoration: 'none',
                      color: 'white',
-                     background: '#999',
+                     background: '#ff3987',
                      display: 'flex',
                      alignItems: 'center',
                      justifyContent: 'center',

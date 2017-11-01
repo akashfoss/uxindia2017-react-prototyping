@@ -5,6 +5,9 @@ export function TickingTime() {
     return (
         <div style={{ fontSize: '15vw' }}>
             <TimeTeller>
+                {
+                    (time) => ('12:34:56')
+                }
             </TimeTeller>
         </div>
     );
