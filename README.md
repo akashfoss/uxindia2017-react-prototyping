@@ -1,6 +1,6 @@
 ## Prototyping with React
 
-> Welcome to the world of Prototyping with Code!
+> Welcome to the Workshop on **Prototyping with Code!**
 
 
 ## Getting Started
