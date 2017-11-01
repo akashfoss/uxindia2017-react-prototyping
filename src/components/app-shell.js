@@ -1,6 +1,8 @@
 import React from 'react';
 import uxIndiaLogo from '../assets/uxindia.png';
 import { Link } from 'react-router-dom';
+import githubLogo from '../assets/github.png';
+
 
 let Footer = function () {
     return <div style={{
@@ -20,18 +22,28 @@ let Footer = function () {
 };
 
 let Header = function () {
-    return <Link to={'/'}
-                 style={{
-                     textDecoration: 'none',
-                     color: 'white',
-                     background: '#ff3987',
-                     display: 'flex',
-                     alignItems: 'center',
-                     justifyContent: 'center',
-                     padding: 5,
-                 }}>
-        Let's Code to Prototype
-    </Link>;
+    return (
+        <div style={{
+            display: 'flex',
+            background: '#ff3987',
+            alignItems: 'center'
+        }}>
+            <Link to={'/'}
+                  style={{
+                      flex: 1,
+                      textDecoration: 'none',
+                      color: 'white',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                  }}>
+                Let's Code to Prototype
+            </Link>
+            <a href="https://github.com/pixelingene/uxindia2017-react-prototyping" target="blank">
+                <img src={githubLogo} height="32" alt="Github Logo"/>
+            </a>
+        </div>
+    );
 };
 
 export function AppShell({ children }) {

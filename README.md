@@ -12,3 +12,12 @@
 - Your browser should open to [http://localhost:3000](http://localhost:3000)
 
 > Let the fun begin!
+
+## What are we doing?
+
+- Learning JavaScript
+- Learning React
+- Thinking in Components
+- Building a set of Watch Faces!
+
+![Watch Faces](_img/examples.png)
